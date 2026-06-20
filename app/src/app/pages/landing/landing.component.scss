@@ -1,0 +1,17 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
