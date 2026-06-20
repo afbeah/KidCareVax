@@ -36,6 +36,32 @@ Todas as alterações relevantes deste projeto serão documentadas neste arquivo
 
 ---
 
+## [1.0.1] - Setup Inicial
+
+### Added
+
+#### Repository
+
+* Estrutura documental criada
+* README inicial
+* BACKLOG inicial
+* CHANGELOG inicial
+
+#### Frontend
+
+* Angular CLI instalado
+* Ionic CLI instalado
+* Projeto Ionic + Angular criado
+* Estrutura inicial da aplicação gerada
+
+#### Planning
+
+* Definição do MVP
+* Planejamento das telas principais
+* Planejamento da navegação da aplicação
+
+---
+
 ## Próximas Versões
 
 ### [1.1.0]

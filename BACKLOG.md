@@ -33,6 +33,32 @@
 
 ---
 
+## Sprint Atual - MVP
+
+### Em Desenvolvimento
+
+* Landing Page
+* Login
+* Cadastro de Responsável
+* Dashboard
+* Cadastro de Criança
+* Listagem de Crianças
+* Histórico Vacinal
+* Campanhas
+
+### Critério de Conclusão
+
+A aplicação deve permitir:
+
+* Cadastro de responsável;
+* Login;
+* Cadastro de uma ou mais crianças;
+* Consulta do histórico vacinal;
+* Visualização da situação vacinal;
+* Consulta de campanhas.
+
+---
+
 ## Próximas Versões
 
 ### V1.1
