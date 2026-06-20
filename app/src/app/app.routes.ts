@@ -9,8 +9,8 @@ export const routes: Routes = [
   {
     path: 'landing',
     loadComponent: () =>
-      import('./pages/login/login.component').then(
-        (m) => m.LoginComponent
+      import('./pages/landing/landing.component').then(
+        (m) => m.LandingComponent
       ),
   },
   {
