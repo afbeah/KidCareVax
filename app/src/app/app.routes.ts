@@ -34,4 +34,25 @@ export const routes: Routes = [
         (m) => m.DashboardComponent
       ),
   },
+  {
+    path: 'children',
+    loadComponent: () => 
+      import('./pages/children/children.component').then(
+        (m) => m.ChildrenComponent
+      ),
+  },
+  {
+    path: 'child-details',
+    loadComponent: () => 
+      import('./pages/child-details/child-details.component').then(
+        (m) => m.ChildDetailsComponent
+      ),
+  },
+  {
+    path: 'compaigns',
+    loadComponent: () => 
+      import('./pages/compaigns/compaigns.component').then(
+        (m) => m.CompaignsComponent       
+      ),
+  },
 ]

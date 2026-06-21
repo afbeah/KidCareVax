@@ -3,12 +3,10 @@ import { RouterModule } from '@angular/router'
 import { IonContent } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
+  selector: 'app-compaigns',
   imports: [RouterModule, IonContent],
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  templateUrl: './compaigns.component.html',
+  styleUrls: ['./compaigns.component.scss'],
+  standalone: true,
 })
-export class DashboardComponent {
-
-}
+export class CompaignsComponent {}
