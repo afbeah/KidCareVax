@@ -17,28 +17,42 @@
       <input
         type="text"
         placeholder="Nome da Vacina"
+        [(ngModel)]="name"
+        name="name"
       />
 
       <input
         type="date"
+        [(ngModel)]="applicationDate"
+        name="applicationDate"
       />
 
-      <select>
+      <select
+        [(ngModel)]="status"
+        name="status">
 
-        <option>Status da Vacina</option>
+        <option value="">
+          Status da Vacina
+        </option>
 
-        <option>Aplicada</option>
+        <option value="Aplicada">
+          Aplicada
+        </option>
 
-        <option>Pendente</option>
+        <option value="Pendente">
+          Pendente
+        </option>
 
-        <option>Atrasada</option>
+        <option value="Atrasada">
+          Atrasada
+        </option>
 
       </select>
 
       <button
         type="button"
         class="btn-primary"
-        routerLink="/child-details">
+        (click)="saveVaccine()">
 
         Salvar
 

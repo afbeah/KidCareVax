@@ -1,14 +1,62 @@
 import { Component } from '@angular/core';
-import { RouterModule } from  '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { IonContent } from '@ionic/angular/standalone';
+
+import { AuthService } from '../../core/services/auth.service';
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, IonContent],
+  imports: [
+    RouterModule,
+    IonContent,
+    FormsModule,
+  ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-
 export class LoginComponent {
+
+  email = '';
+  password = '';
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  async login() {
+
+    try {
+
+      await this.authService.login(
+        this.email,
+        this.password
+      );
+
+      this.router.navigate(['/dashboard']);
+
+    } catch (error: any) {
+
+      console.error(error);
+
+      switch (error.code) {
+
+        case 'auth/invalid-credential':
+          alert('E-mail ou senha inválidos.');
+          break;
+
+        case 'auth/user-not-found':
+          alert('Usuário não encontrado.');
+          break;
+
+        default:
+          alert('Erro ao realizar login.');
+      }
+
+    }
+
+  }
 
 }

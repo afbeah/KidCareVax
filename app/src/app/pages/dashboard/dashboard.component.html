@@ -1,40 +1,89 @@
 <ion-content>
+
   <div class="dashboard-container">
+
     <div class="dashboard-header">
+
       <h1>Bem-vindo!</h1>
 
-      <p>Acompanhe a situação vacinal dos seus pequenos</p>
+      <p>
+        Acompanhe a situação vacinal dos seus pequenos
+      </p>
+
     </div>
 
     <div class="summary-cards">
+
       <div class="summary-card">
-        <h3>2</h3>
-        <span>Crianças</span>
+
+        <h3>
+          {{ totalChildren }}
+        </h3>
+
+        <span>
+          Crianças
+        </span>
+
       </div>
 
       <div class="summary-card">
-        <h3>1</h3>
-        <span>Vacinas Pendentes</span>
+
+        <h3>
+          {{ pendingVaccines }}
+        </h3>
+
+        <span>
+          Vacinas Pendentes
+        </span>
+
       </div>
 
       <div class="summary-card">
-        <h3>1</h3>
-        <span>Vacinas atrasadas</span>
+
+        <h3>
+          {{ overdueVaccines }}
+        </h3>
+
+        <span>
+          Vacinas Atrasadas
+        </span>
+
       </div>
+
     </div>
 
     <section class="children-section">
-      <h2>Minhas Crianças</h2>
 
-      <button class="btn-primary" routerLink="/children">Ver Crianças</button>
+      <h2>
+        Minhas Crianças
+      </h2>
+
+      <button
+        class="btn-primary"
+        routerLink="/children">
+
+        Ver Crianças
+
+      </button>
+
     </section>
 
     <section class="campaigns-section">
-      <h2>Campanhas</h2>
 
-      <button class="btn-secondary" routerLink="/campaigns">
+      <h2>
+        Campanhas
+      </h2>
+
+      <button
+        class="btn-secondary"
+        routerLink="/campaigns">
+
         Verificar Campanhas
+
       </button>
+
     </section>
+
   </div>
+
 </ion-content>

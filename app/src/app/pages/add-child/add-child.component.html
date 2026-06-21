@@ -3,11 +3,13 @@
   <div class="add-child-container">
 
     <div class="add-child-header">
+
       <h1>Cadastrar Criança</h1>
 
       <p>
         Adicione uma nova criança ao acompanhamento vacinal.
       </p>
+
     </div>
 
     <form class="add-child-form">
@@ -15,22 +17,38 @@
       <input
         type="text"
         placeholder="Nome Completo"
+        [(ngModel)]="name"
+        name="name"
       />
 
       <input
         type="date"
+        [(ngModel)]="birthDate"
+        name="birthDate"
       />
 
-      <select>
-        <option>Selecione o Sexo</option>
-        <option>Masculino</option>
-        <option>Feminino</option>
+      <select
+        [(ngModel)]="gender"
+        name="gender">
+
+        <option value="">
+          Selecione o Sexo
+        </option>
+
+        <option value="Masculino">
+          Masculino
+        </option>
+
+        <option value="Feminino">
+          Feminino
+        </option>
+
       </select>
 
       <button
         type="button"
         class="btn-primary"
-        routerLink="/children">
+        (click)="saveChild()">
 
         Salvar
 

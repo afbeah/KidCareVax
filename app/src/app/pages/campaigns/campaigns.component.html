@@ -4,38 +4,30 @@
 
     <div class="campaigns-header">
 
-      <h1>Campanhas Ativas</h1>
+      <h1>
+        Campanhas de Vacinação
+      </h1>
 
       <p>
-        Acompanhe campanhas disponíveis para suas crianças.
+        Acompanhe campanhas ativas para o público infantil.
       </p>
 
     </div>
 
-    <div class="campaign-card">
+    <div
+      class="campaign-card"
+      *ngFor="let campaign of campaigns">
 
-      <h2>Influenza 2026</h2>
-
-      <p>
-        Campanha destinada para crianças de 6 meses a 5 anos.
-      </p>
-
-      <span>
-        Disponível
-      </span>
-
-    </div>
-
-    <div class="campaign-card">
-
-      <h2>Multivacinação</h2>
+      <h2>
+        {{ campaign.title }}
+      </h2>
 
       <p>
-        Atualização da carteira vacinal infantil.
+        {{ campaign.description }}
       </p>
 
-      <span>
-        Disponível
+      <span class="status-active">
+        {{ campaign.status }}
       </span>
 
     </div>
@@ -44,7 +36,7 @@
       class="btn-secondary"
       routerLink="/dashboard">
 
-      Voltar ao Dashboard
+      Voltar
 
     </button>
 

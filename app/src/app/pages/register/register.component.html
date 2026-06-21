@@ -7,19 +7,55 @@
 
       <h2>Criar Conta</h2>
 
-      <p>Cadastre-se para acompanhar a jornada vacinal das crianças de forma simples e organizada.</p>
+      <p>
+        Cadastre-se para acompanhar a jornada vacinal das crianças.
+      </p>
 
-      <input type="text" placeholder="Nome Completo"/>
+      <input
+        type="text"
+        placeholder="Nome Completo"
+        [(ngModel)]="name"
+      />
 
-      <input type="text" placeholder="CPF"/>
+      <input
+        type="text"
+        placeholder="CPF"
+        [(ngModel)]="cpf"
+      />
 
-      <input type="password" placeholder="Senha"/>
+      <input
+        type="email"
+        placeholder="E-mail"
+        [(ngModel)]="email"
+      />
 
-      <input type="password" placeholder="Confirmar Senha"/>
+      <input
+        type="password"
+        placeholder="Senha"
+        [(ngModel)]="password"
+      />
 
-      <button class="btn-primary" routerLink="/dashboard">Criar Conta</button>
+      <input
+        type="password"
+        placeholder="Confirmar Senha"
+        [(ngModel)]="confirmPassword"
+      />
 
-      <button class="btn-secondary" routerLink="/login">Já possuo conta</button>
+      <button
+        class="btn-primary"
+        (click)="register()">
+
+        Criar Conta
+
+      </button>
+
+      <button
+        class="btn-secondary"
+        routerLink="/login">
+
+        Já possuo conta
+
+      </button>
 
     </div>
 
