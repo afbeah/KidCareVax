@@ -1,3 +1,51 @@
-<p>
-  child-details works!
-</p>
+<ion-content>
+  <div class="details-container">
+    <div class="deatils-header">
+      <h1>Lucas</h1>
+
+      <p class="age">4 anos</p>
+
+      <span class="status-ok">Situação Vacinal em dia</span>
+    </div>
+
+    <section class="history-section">
+      <h2>Histórico Vacional</h2>
+
+      <div class="vaccine-card">
+        <h3>BCG</h3>
+        <p>Aplicada em 15/02/2022</p>
+      </div>
+
+      <div class="vaccine-card">
+        <h3>Hepatite B</h3>
+        <p>Aplicada em 15/02/2022</p>
+      </div>
+
+      <div class="vaccine-card">
+        <h3>Pentavalente</h3>
+        <p>Aplicada em 20/04/2022</p>
+      </div>
+
+      <div class="vaccine-card">
+        <h3>Poliomelite</h3>
+        <p>Vacina Pendente</p>
+      </div>
+    </section>
+
+    <section class="campaigns-section">
+      <h2>Campanhas Elegíveis</h2>
+
+      <div class="campaigns-card">
+        <h3>Influenza 2026</h3>
+
+        <p class="infoVax">Disponível para crianças de 6 meses a 5 anos.</p>
+      </div>
+    </section>
+
+    <button class="btn-primary" routerLink="/add-vaccine">
+      Registrar Vacina
+    </button>
+
+    <button class="btn-secondary" routerLink="/children">Voltar</button>
+  </div>
+</ion-content>

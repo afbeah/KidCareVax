@@ -1,0 +1,60 @@
+<ion-content>
+
+  <div class="add-vaccine-container">
+
+    <div class="add-vaccine-header">
+
+      <h1>Registrar Vacina</h1>
+
+      <p>
+        Atualize o histórico vacinal da criança.
+      </p>
+
+    </div>
+
+    <form class="add-vaccine-form">
+
+      <input
+        type="text"
+        placeholder="Nome da Vacina"
+      />
+
+      <input
+        type="date"
+      />
+
+      <select>
+
+        <option>Status da Vacina</option>
+
+        <option>Aplicada</option>
+
+        <option>Pendente</option>
+
+        <option>Atrasada</option>
+
+      </select>
+
+      <button
+        type="button"
+        class="btn-primary"
+        routerLink="/child-details">
+
+        Salvar
+
+      </button>
+
+      <button
+        type="button"
+        class="btn-secondary"
+        routerLink="/child-details">
+
+        Cancelar
+
+      </button>
+
+    </form>
+
+  </div>
+
+</ion-content>

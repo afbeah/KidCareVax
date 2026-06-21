@@ -10,49 +10,61 @@ export const routes: Routes = [
     path: 'landing',
     loadComponent: () =>
       import('./pages/landing/landing.component').then(
-        (m) => m.LandingComponent
+        (m) => m.LandingComponent,
       ),
   },
   {
     path: 'login',
-    loadComponent: () => 
-      import('./pages/login/login.component').then(
-        (m) => m.LoginComponent
-      ),
+    loadComponent: () =>
+      import('./pages/login/login.component').then((m) => m.LoginComponent),
   },
   {
     path: 'register',
-    loadComponent: () => 
+    loadComponent: () =>
       import('./pages/register/register.component').then(
-        (m) => m.RegisterComponent
+        (m) => m.RegisterComponent,
       ),
   },
   {
     path: 'dashboard',
-    loadComponent: () => 
+    loadComponent: () =>
       import('./pages/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent
+        (m) => m.DashboardComponent,
       ),
   },
   {
     path: 'children',
-    loadComponent: () => 
+    loadComponent: () =>
       import('./pages/children/children.component').then(
-        (m) => m.ChildrenComponent
+        (m) => m.ChildrenComponent,
       ),
   },
   {
     path: 'child-details',
-    loadComponent: () => 
+    loadComponent: () =>
       import('./pages/child-details/child-details.component').then(
-        (m) => m.ChildDetailsComponent
+        (m) => m.ChildDetailsComponent,
       ),
   },
   {
-    path: 'compaigns',
-    loadComponent: () => 
-      import('./pages/compaigns/compaigns.component').then(
-        (m) => m.CompaignsComponent       
+    path: 'campaigns',
+    loadComponent: () =>
+      import('./pages/campaigns/campaigns.component').then(
+        (m) => m.CampaignsComponent,
       ),
   },
-]
+  {
+    path: 'add-child',
+    loadComponent: () =>
+      import('./pages/add-child/add-child.component').then(
+        (m) => m.AddChildComponent,
+      ),
+  },
+    {
+    path: 'add-vaccine',
+    loadComponent: () =>
+      import('./pages/add-vaccine/add-vaccine.component').then(
+        (m) => m.AddVaccineComponent,
+      ),
+  },
+];

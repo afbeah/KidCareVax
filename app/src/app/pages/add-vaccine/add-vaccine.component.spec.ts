@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { CompaignsComponent } from './compaigns.component';
+import { AddVaccineComponent } from './add-vaccine.component';
 
-describe('CompaignsComponent', () => {
-  let component: CompaignsComponent;
-  let fixture: ComponentFixture<CompaignsComponent>;
+describe('AddVaccineComponent', () => {
+  let component: AddVaccineComponent;
+  let fixture: ComponentFixture<AddVaccineComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [CompaignsComponent],
+      imports: [AddVaccineComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CompaignsComponent);
+    fixture = TestBed.createComponent(AddVaccineComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
