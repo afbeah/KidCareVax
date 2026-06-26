@@ -1,49 +1,33 @@
-<ion-content>
+<ion-content [fullscreen]="true">
   <div class="login-container">
 
     <div class="login-card">
 
-      <h1>KidCareVax</h1>
+      <div class="login-header">
+        <img src="assets/images/logo.svg" alt="KidCareVax" class="logo"/>
 
-      <h2>Login</h2>
+        <h2>Login</h2>
 
-      <p>
-        Acesse sua conta para acompanhar a jornada vacinal das crianças.
-      </p>
+        <p>Acesse sua conta para acompanhar a jornada vacinal das crianças</p>
+      </div>
 
-      <input
-        type="email"
-        placeholder="E-mail"
-        [(ngModel)]="email"
-      />
+      <div class="login-form">
 
-      <input
-        type="password"
-        placeholder="Senha"
-        [(ngModel)]="password"
-      />
+        <input type="email" placeholder="E-mail" [(ngModel)]="email"/>
 
-      <button
-        class="btn-primary"
-        (click)="login()">
+        <input type="password" placeholder="Senha" [(ngModel)]="password"/>
 
-        Entrar
+        <button class="btn-primary" (click)="login()">Entrar</button>
 
-      </button>
+        <button class="btn-secondary" routerLink="/register">Criar Conta</button>
+      </div>
 
-      <button
-        class="btn-secondary"
-        routerLink="/register">
-
-        Criar Conta
-
-      </button>
-
-      <p class="txt">
-        Não possui uma conta?
-      </p>
+      <div class="login-footer">
+        <p>Não possui uma conta?</p>
+      </div>
 
     </div>
 
   </div>
+
 </ion-content>
