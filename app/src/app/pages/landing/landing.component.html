@@ -1,26 +1,38 @@
-<div class="landing-container">
-  <div class="landing-content">
-    <h1>KidCareVax</h1>
+<ion-content [fullscreen]="true">
+  
+  <div class="landing-container">
 
-    <h2>Gestão Vacinal Infantil</h2>
+    <div class="landing-card">
 
-    <div class="landing-features">
-      <span>✔ Histórico Vacinal</span>
-      <span>✔ Múltiplas Crianças</span>
-      <span>✔ Campanhas de Vacinação</span>
+      <div class="landing-header">
+
+        <img src="assets/images/logo.svg" alt="KidCareVax" class="logo"/>
+
+        <h3>Cuidando do futuro,<br> uma vacina por vez</h3>
+
+        <p>Acompanhe o calendário vacinal das 
+        crianças de forma simples, segura e organizada.</p>
+      
+      </div>
+
+      <div class="landing-features">
+
+        <span>✔ Histórico Vacinal</span>
+        <span>✔ Múltiplas Crianças</span>
+        <span>✔ Campanhas de Vacinação</span>
+
+      </div>
+
+      <div  class="landing-actions">
+
+        <button class="btn-primary" routerLink="/login">Entrar</button>
+
+        <button class="btn-secondary" routerLink="/register">Criar Conta</button>
+
+      </div>
+
     </div>
 
-    <p>
-      Acompanhe o calendário vacinal das crianças de forma simples, segura e
-      organizada.
-    </p>
-
-    <div class="landing-actions">
-      <button class="btn-primary" routerLink="/login">Entrar</button>
-    </div>
-    
-    <div>
-      <button class="btn-secondary" routerLink="/register">Criar Conta</button>
-    </div>
   </div>
-</div>
+
+</ion-content>
