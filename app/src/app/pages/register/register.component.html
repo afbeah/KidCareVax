@@ -1,63 +1,39 @@
-<ion-content>
+<ion-content [fullscreen]="true">
+
   <div class="register-container">
 
     <div class="register-card">
 
-      <h1>KidCareVax</h1>
+      <div class="register-header">
 
-      <h2>Criar Conta</h2>
+        <img src="assets/images/logo.svg" alt="KidCareVax" class="logo"/>
 
-      <p>
-        Cadastre-se para acompanhar a jornada vacinal das crianças.
-      </p>
+        <h2>Criar Conta</h2>
 
-      <input
-        type="text"
-        placeholder="Nome Completo"
-        [(ngModel)]="name"
-      />
+        <p>Cadastre-se para acompanhar a jornada vacinal das crianças.</p>
 
-      <input
-        type="text"
-        placeholder="CPF"
-        [(ngModel)]="cpf"
-      />
+      </div>
 
-      <input
-        type="email"
-        placeholder="E-mail"
-        [(ngModel)]="email"
-      />
+      <div class="register-form">
 
-      <input
-        type="password"
-        placeholder="Senha"
-        [(ngModel)]="password"
-      />
+        <input type="text" placeholder="Nome Completo" [(ngModel)]="name"/>
 
-      <input
-        type="password"
-        placeholder="Confirmar Senha"
-        [(ngModel)]="confirmPassword"
-      />
+        <input type="text" placeholder="CPF" [(ngModel)]="cpf"/>
 
-      <button
-        class="btn-primary"
-        (click)="register()">
+        <input type="email" placeholder="E-mail" [(ngModel)]="email"/>
 
-        Criar Conta
+        <input type="password" placeholder="Senha" [(ngModel)]="password"/>
 
-      </button>
+        <input type="password" placeholder="Confirmar Senha" [(ngModel)]="password">
 
-      <button
-        class="btn-secondary"
-        routerLink="/login">
+        <button class="btn-primary" (click)="register()">Criar Conta</button>
 
-        Já possuo conta
+        <button class="btn-secondary" routerLink="/login">Já possuo conta</button>
 
-      </button>
+      </div>
 
     </div>
 
   </div>
+
 </ion-content>
