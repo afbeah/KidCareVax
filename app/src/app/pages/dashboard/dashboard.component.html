@@ -1,89 +1,93 @@
-<ion-content>
+<ion-content [fullscreen]="true">
 
   <div class="dashboard-container">
+    
+    <div class="dashboard-card">
+      <div class="dashboard-header">
+        <h1>Bem-vindo! 👋</h1>
 
-    <div class="dashboard-header">
+        <p>Acompanhe a situação vacinal dos seus pequenos.</p>
+      </div>
 
-      <h1>Bem-vindo!</h1>
+      <!-- Cards de Resumo -->
 
-      <p>
-        Acompanhe a situação vacinal dos seus pequenos
-      </p>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="summary-icon">
+            <ion-icon name="people-outline"></ion-icon>
+          </div>
 
+          <div class="summary-info">
+            <h3>
+              {{ totalChildren }}
+            </h3>
+
+            <span> Crianças </span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">
+            <ion-icon name="medical-outline"></ion-icon>
+          </div>
+
+          <div class="summary-info">
+            <h3>
+              {{ pendingVaccines }}
+            </h3>
+
+            <span> Vacinas Pendentes </span>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">
+            <ion-icon name="time-outline"></ion-icon>
+          </div>
+
+          <div class="summary-info">
+            <h3>
+              {{ overdueVaccines }}
+            </h3>
+
+            <span> Vacinas Atrasadas </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+
+      <div class="dashboard-actions">
+        <div class="action-card" routerLink="/children">
+          <div class="action-info">
+            <h2>
+              <ion-icon name="people-outline"></ion-icon>
+              Minhas Crianças
+            </h2>
+
+            <p>Visualize e gerencie todas as crianças cadastradas.</p>
+          </div>
+
+          <div class="action-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="action-card" routerLink="/campaigns">
+          <div class="action-info">
+            <h2>
+              <ion-icon name="megaphone-outline"></ion-icon>
+              Campanhas
+            </h2>
+
+            <p>Consulte campanhas de vacinação disponíveis.</p>
+          </div>
+
+          <div class="action-arrow">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="summary-cards">
-
-      <div class="summary-card">
-
-        <h3>
-          {{ totalChildren }}
-        </h3>
-
-        <span>
-          Crianças
-        </span>
-
-      </div>
-
-      <div class="summary-card">
-
-        <h3>
-          {{ pendingVaccines }}
-        </h3>
-
-        <span>
-          Vacinas Pendentes
-        </span>
-
-      </div>
-
-      <div class="summary-card">
-
-        <h3>
-          {{ overdueVaccines }}
-        </h3>
-
-        <span>
-          Vacinas Atrasadas
-        </span>
-
-      </div>
-
-    </div>
-
-    <section class="children-section">
-
-      <h2>
-        Minhas Crianças
-      </h2>
-
-      <button
-        class="btn-primary"
-        routerLink="/children">
-
-        Ver Crianças
-
-      </button>
-
-    </section>
-
-    <section class="campaigns-section">
-
-      <h2>
-        Campanhas
-      </h2>
-
-      <button
-        class="btn-secondary"
-        routerLink="/campaigns">
-
-        Verificar Campanhas
-
-      </button>
-
-    </section>
-
   </div>
-
 </ion-content>

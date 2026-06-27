@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline } from 'ionicons/icons';
 
 import { ChildService } from '../../core/services/child.service';
 import { VaccineService } from '../../core/services/vaccine.service';
@@ -11,6 +14,7 @@ import { VaccineService } from '../../core/services/vaccine.service';
   imports: [
     RouterModule,
     IonContent,
+    IonIcon,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
@@ -26,7 +30,16 @@ export class DashboardComponent implements OnInit {
   constructor(
     private childService: ChildService,
     private vaccineService: VaccineService,
-  ) {}
+  ) {
+    
+    addIcons({
+      peopleOutline,
+      medicalOutline,
+      timeOutline,
+      megaphoneOutline,
+      arrowForwardOutline,
+    });
+  }
 
   async ngOnInit() {
 

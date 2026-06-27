@@ -1,103 +1,175 @@
+ion-content {
+  --background: transparent;
+}
+
 .dashboard-container {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
-  background-color: #fff;
+
+  background-image: url("/assets/images/background-login.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dashboard-card {
+  width: 100%;
+  max-width: 920px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(44, 62, 80, 0.12);
+  padding: 3rem;
 }
 
 .dashboard-header {
-  margin-bottom: 2rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .dashboard-header h1 {
   color: #473c33;
-  margin-bottom: 0.5rem;
-  font-family:cursive;
   font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .dashboard-header p {
   color: #666;
 }
 
-.summary-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.summary-card {
-  background-color: #abc270;
-  color: #473c33;
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.summary-cards h3 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.dashboard-button {
-  width: 100%;
-  padding: 1rem;
-  border: none;
-  border-radius: 12px;
-  background-color: #fec868;
-  color: #473c33;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.children-section,
-.campaigns-section {
+.dashboard-actions {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.action-card {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-}
-
-.children-section h2,
-.campaigns-section h2 {
-  color: #473c33;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 1rem;
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 1.8rem;
+  border-radius: 22px;
+  background: #f8faef;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
-  width: 50%;
+  transition: 0.25s;
+  border: 1px solid rgba(171, 194, 112, 0.2);
 }
 
-.btn-primary {
-  background: #abc270;
+.action-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.action-info h2 {
+  margin: 0;
   color: #473c33;
-  border-left: 4px solid #473c33;
-  border-right: 4px solid #473c33;
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.btn-secondary {
-  background: #fec868;
-  color: #473c33;  
-  border-left: 4px solid #473c33;
-  border-right: 4px solid #473c33;
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.child-card h3,
-.campaign-card h3 {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-bottom: 0.5rem;
   color: #473c33;
 }
 
-p {
+.action-info p {
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+.action-info ion-icon {
+  font-size: 22px;
+  color: #abc270;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.action-arrow ion-icon {
+  font-size: 30px;
+  color: #abc270;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 22px;
+  background: #f8faef;
+  border: 1px solid rgba(171, 194, 112, 0.25);
+  transition: 0.25s;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.summary-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.summary-icon ion-icon {
+  font-size: 32px;
+  color: #abc270;
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-info h3 {
+  margin: 0;
+  font-size: 2.3rem;
   color: #473c33;
+}
+
+.summary-info span {
+  color: #473c33;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .dashboard-card {
+    padding: 2rem;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+  .summary-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
 }
