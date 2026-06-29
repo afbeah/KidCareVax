@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline } from 'ionicons/icons';
+import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline, arrowBackOutline, addCircleOutline } from 'ionicons/icons';
 
 import { ChildService } from '../../core/services/child.service';
 import { VaccineService } from '../../core/services/vaccine.service';
@@ -38,6 +38,8 @@ export class DashboardComponent implements OnInit {
       timeOutline,
       megaphoneOutline,
       arrowForwardOutline,
+      arrowBackOutline,
+      addCircleOutline
     });
   }
 
@@ -47,6 +49,8 @@ export class DashboardComponent implements OnInit {
 
       const children =
         await this.childService.getChildren();
+        console.log('Dashboard:', children);
+        console.log('Quantidade:', children.length);
 
       const vaccines =
         await this.vaccineService.getAllVaccines();

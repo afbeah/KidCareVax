@@ -1,24 +1,57 @@
-<ion-content>
-  <div class="children-container">
-    <div class="children-header">
-      <h1>Minhas Crianças</h1>
+<ion-content [fullscreen]="true">
 
-      <p>Gerencie os perfis e acompanha a situação vacinal.</p>
-    </div>
-    <div class="child-card" *ngFor="let child of children">
-      <h2>{{ child.name }}</h2>
+  <div  class="children-container">
 
-      <p>{{ child.birthDate }}</p>
+    <div class="children-card">
 
-      <span class="status-ok"> Em dia </span>
+      <div class="children-back" routerLink="/dashboard">
 
-      <button class="btn-primary" routerLink="/child-details">
-        Ver Detalhes
+        <ion-icon name="arrow-back-outline"></ion-icon>
+
+        <span>Voltar</span>
+
+      </div>
+
+      <div  class="children-header">
+
+        <ion-icon name="people-outline"></ion-icon>
+
+        <h1>Minhas Crianças</h1>
+
+        <p>Gerencie os perfis cadastrados e acompanhe a situação vacinal.</p>
+
+      </div>
+
+      <button class="btn-add" routerLink="/add-child">
+
+        <ion-icon name="add-circle-outline"></ion-icon>
+
+        Cadastrar Criança
+
       </button>
+
+      <div class="child-card" *ngFor="let child of children" routerLink="/child-details">
+
+        <div class="child-info">
+
+          <h2>{{ child.name }}</h2>
+
+          <p>
+            <strong>Nascimento</strong>
+            {{ child.birthDate }}
+          </p>
+
+          <span class="status-ok">✔ Em dia</span>
+        </div>
+
+        <div class="child-arrow">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+
+      </div>
+
     </div>
 
-    <button class="btn-secondary" routerLink="/add-child">
-      + Cadastrar Criança
-    </button>
   </div>
+
 </ion-content>
