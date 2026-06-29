@@ -1,89 +1,70 @@
-<ion-content>
-
+<ion-content [fullscreen]="true">
   <div class="details-container">
+    <div class="details-card">
+      <div class="details-back" routerLink="/children">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <span>Voltar</span>
+      </div>
 
-    <div class="deatils-header">
+      <div class="details-header">
+        <ion-icon class="page-icon" name="person-circle-outline"></ion-icon>
+        <h1>{{ child?.name || "Criança" }}</h1>
 
-      <h1>
-        {{ child?.name || 'Criança' }}
-      </h1>
+        <div class="child-meta">
+          <span>Nascimento</span>
+          <strong>{{ child?.birthDate }}</strong>
+        </div>
 
-      <p class="age">
-        Nascimento: {{ child?.birthDate }}
-      </p>
+        <span
+          class="status-badge"
+          [ngClass]="{
+            'status-ok': vaccinationStatus === 'Em dia',
+            'status-warning': vaccinationStatus === 'Pendente',
+            'status-danger': vaccinationStatus === 'Atrasada',
+          }"
+        >
+          {{ vaccinationStatus }}
+        </span>
+      </div>
 
-      <span class="status-ok">
-        {{ vaccinationStatus }}
-      </span>
+      <section class="history-section">
+        <h2>
+          <ion-icon name="medical-outline"></ion-icon>
+          Histórico Vacinal
+        </h2>
 
+        <div class="vaccine-card" *ngFor="let vaccine of vaccines">
+          <div>
+            <h3>{{ vaccine.name }}</h3>
+
+            <p>
+              {{ vaccine.status }}
+
+              <span *ngIf="vaccine.applicationDate">
+                • {{ vaccine.applicationDate }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="campaigns-section">
+        <h2>
+          <ion-icon name="megaphone-outline"></ion-icon>
+          Campanhas Elegíveis
+        </h2>
+
+        <div class="campaign-card">
+          <h3>Influenza 2026</h3>
+
+          <p>Disponível para crianças de 6 meses a 5 anos.</p>
+        </div>
+      </section>
+
+      <button class="btn-primary" routerLink="/add-vaccine">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        Registrar Vacina
+      </button>
     </div>
-
-    <section class="history-section">
-
-      <h2>
-        Histórico Vacinal
-      </h2>
-
-      <div
-        class="vaccine-card"
-        *ngFor="let vaccine of vaccines">
-
-        <h3>
-          {{ vaccine.name }}
-        </h3>
-
-        <p>
-
-          {{ vaccine.status }}
-
-          <span *ngIf="vaccine.applicationDate">
-
-            em {{ vaccine.applicationDate }}
-
-          </span>
-
-        </p>
-
-      </div>
-
-    </section>
-
-    <section class="campaigns-section">
-
-      <h2>
-        Campanhas Elegíveis
-      </h2>
-
-      <div class="campaigns-card">
-
-        <h3>
-          Influenza 2026
-        </h3>
-
-        <p class="infoVax">
-          Disponível para crianças de 6 meses a 5 anos.
-        </p>
-
-      </div>
-
-    </section>
-
-    <button
-      class="btn-primary"
-      routerLink="/add-vaccine">
-
-      Registrar Vacina
-
-    </button>
-
-    <button
-      class="btn-secondary"
-      routerLink="/children">
-
-      Voltar
-
-    </button>
-
   </div>
-
 </ion-content>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, personCircleOutline, medicalOutline, megaphoneOutline, addCircleOutline } from 'ionicons/icons';
 
 import { ChildService } from '../../core/services/child.service';
 import { VaccineService } from '../../core/services/vaccine.service';
@@ -13,6 +16,7 @@ import { VaccineService } from '../../core/services/vaccine.service';
     CommonModule,
     RouterModule,
     IonContent,
+    IonIcon,
   ],
   templateUrl: './child-details.component.html',
   styleUrls: ['./child-details.component.scss'],
@@ -28,7 +32,15 @@ export class ChildDetailsComponent implements OnInit {
   constructor(
     private childService: ChildService,
     private vaccineService: VaccineService,
-  ) {}
+  ) {
+    addIcons({
+      arrowBackOutline,
+      personCircleOutline,
+      medicalOutline,
+      megaphoneOutline,
+      addCircleOutline,
+    });
+  }
 
   async ngOnInit() {
 

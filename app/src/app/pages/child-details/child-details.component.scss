@@ -1,98 +1,197 @@
+ion-content {
+  --background: transparent;
+}
+
 .details-container {
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+  background-image: url("/assets/images/background-login.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.details-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(44, 62, 80, 0.12);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  cursor: pointer;
+  color: #473c33;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.details-back:hover {
+  color: #abc270;
+}
+
+.details-back ion-icon {
+  font-size: 1.2rem;
 }
 
 .details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.page-icon {
+  font-size: 4rem;
+  color: #abc270;
+  margin-bottom: 1rem;
 }
 
 .details-header h1 {
+  margin: 0;
   color: #473c33;
   font-size: 2.5rem;
 }
 
-.details-header p {
-  color: #666;
+.child-meta {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.child-meta span {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.child-meta strong {
+  color: #473c33;
+}
+
+.status-badge {
+  margin-top: 1rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .status-ok {
+  background: #eaf8ea;
   color: #2e7d32;
-  font-weight: 600;
+}
+
+.status-warning {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.status-danger {
+  background: #ffebee;
+  color: #c62828;
 }
 
 .history-section,
 .campaigns-section {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
 }
 
 .history-section h2,
 .campaigns-section h2 {
-  color: #fff;
-  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #473c33;
+  margin: 0;
+  text-align: center;
 }
 
 .vaccine-card,
 .campaign-card {
-  background-color: #abc270;
-  padding: 1rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
+  background: #f8faef;
+  border: 1px solid rgba(171, 194, 112, 0.25);
+  border-radius: 20px;
+  padding: 1.6rem;
+  transition: 0.25s;
+}
+
+.vaccine-card:hover,
+.campaign-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .vaccine-card h3,
 .campaign-card h3 {
+  margin: 0 0 0.6rem;
   color: #473c33;
-  text-align: center;
 }
 
-.warning {
-  border-left: 4px solid #ef6c00;
+.vaccine-card p,
+.campaign-card p {
+  margin: 0;
+  color: #666;  
+  line-height: 1.6;
 }
 
 .btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
   width: 100%;
-  max-width: 300px;
-
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-
-  background-color: #abc270;
-  color: #473c33;
-
-  border: none;
-  border-radius: 12px;
-
   padding: 1rem;
-}
-
-.btn-secondary {
-  width: 100%;
-  max-width: 300px;
-
-  display: block;
-  margin: 0 auto;
-
-  background-color: #fec868;
-  color: #473c33;
-
   border: none;
-  border-radius: 12px;
-
-  padding: 1rem;
+  border-radius: 14px;
+  background: #abc270;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
 }
 
-p {
-    text-align: center;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(171, 194, 112, 0.35);
 }
 
-.age {
-    text-align: left;
+.btn-primary ion-icon {
+  font-size: 1.2rem;
 }
 
-.infoVax {
-  text-align: left;
+/* Mobile */
+
+@media (max-width: 768px) {
+  .details-container {
+    padding: 1rem;
+  }
+
+  .details-card {
+    padding: 2rem;
+  }
+
+  .page-icon {
+    font-size: 3rem;
+  }
+
+  .details-header h1 {
+    font-size: 2rem;
+  }
 }
