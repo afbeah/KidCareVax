@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, personAddOutline,saveOutline } from 'ionicons/icons';
 
 import { ChildService } from '../../core/services/child.service';
 
@@ -10,6 +13,7 @@ import { ChildService } from '../../core/services/child.service';
   standalone: true,
   imports: [
     IonContent,
+    IonIcon,
     RouterModule,
     FormsModule,
   ],
@@ -25,7 +29,13 @@ export class AddChildComponent {
   constructor(
     private childService: ChildService,
     private router: Router,
-  ) {}
+  ) {
+    addIcons({
+      arrowBackOutline,
+      personAddOutline,
+      saveOutline
+    });
+  }
 
   async saveChild() {
 

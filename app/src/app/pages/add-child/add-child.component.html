@@ -1,69 +1,54 @@
-<ion-content>
+<ion-content [fullscreen]="true">
 
   <div class="add-child-container">
 
-    <div class="add-child-header">
+    <div class="add-child-card">
 
-      <h1>Cadastrar Criança</h1>
+      <div class="add-child-back" routerLink="/children">
 
-      <p>
-        Adicione uma nova criança ao acompanhamento vacinal.
-      </p>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+
+        <span>Voltar</span>
+
+      </div>
+
+      <div class="add-child-header">
+        <ion-icon name="person-add-outline" class="page-icon"></ion-icon>
+
+        <h1>Cadastrar Criança</h1>
+
+        <p>Adicione um novo perfil infantil para acompanhar a jornada vacinal.</p>
+      </div>
+
+      <form class="add-child-form">
+
+        <input type="text" placeholder="Nome Completo" [(ngModel)]="name" name="name"/>
+
+        <input type="date" [(ngModel)]="birthDate" name="birthDate"/>
+
+        <select [(ngModel)]="gender" name="gender">
+
+          <option value="">Selecione o Sexo</option>
+
+          <option value="Masculino">Masculino</option>
+
+          <option value="Feminino">Feminino</option>
+
+        </select>
+
+        <button type="button" class="btn-primary" (click)="saveChild()">
+          <ion-icon name="save-outline"></ion-icon>
+
+          Salvar Criança
+        </button>
+
+        <button type="button" class="btn-secondary" routerLink="/children">
+          Cancelar
+        </button>
+
+      </form>
 
     </div>
-
-    <form class="add-child-form">
-
-      <input
-        type="text"
-        placeholder="Nome Completo"
-        [(ngModel)]="name"
-        name="name"
-      />
-
-      <input
-        type="date"
-        [(ngModel)]="birthDate"
-        name="birthDate"
-      />
-
-      <select
-        [(ngModel)]="gender"
-        name="gender">
-
-        <option value="">
-          Selecione o Sexo
-        </option>
-
-        <option value="Masculino">
-          Masculino
-        </option>
-
-        <option value="Feminino">
-          Feminino
-        </option>
-
-      </select>
-
-      <button
-        type="button"
-        class="btn-primary"
-        (click)="saveChild()">
-
-        Salvar
-
-      </button>
-
-      <button
-        type="button"
-        class="btn-secondary"
-        routerLink="/children">
-
-        Cancelar
-
-      </button>
-
-    </form>
 
   </div>
 
