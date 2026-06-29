@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, medicalOutline,saveOutline, } from 'ionicons/icons';
 
 import { VaccineService } from '../../core/services/vaccine.service';
 import { ChildService } from '../../core/services/child.service';
@@ -13,6 +16,7 @@ import { ChildService } from '../../core/services/child.service';
     IonContent,
     RouterModule,
     FormsModule,
+    IonIcon,
   ],
   templateUrl: './add-vaccine.component.html',
   styleUrls: ['./add-vaccine.component.scss'],
@@ -27,7 +31,13 @@ export class AddVaccineComponent {
     private vaccineService: VaccineService,
     private childService: ChildService,
     private router: Router,
-  ) {}
+  ) {
+    addIcons({
+      arrowBackOutline,
+      medicalOutline,
+      saveOutline,
+    });
+  }
 
   async saveVaccine() {
 

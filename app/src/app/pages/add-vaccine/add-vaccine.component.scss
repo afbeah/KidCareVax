@@ -1,53 +1,164 @@
+ion-content {
+  --background: transparent;
+}
+
 .add-vaccine-container {
-  max-width: 600px;
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+
+  background-image: url("/assets/images/background-login.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.add-vaccine-card {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(44,62,80,.12);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.add-vaccine-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: fit-content;
+  cursor: pointer;
+  color: #473c33;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.add-vaccine-back:hover {
+  color: #abc270;
+}
+
+.add-vaccine-back ion-icon {
+  font-size: 1.2rem;
 }
 
 .add-vaccine-header {
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.page-icon {
+  font-size: 4rem;
+  color: #abc270;
+  margin-bottom: 1rem;
 }
 
 .add-vaccine-header h1 {
+  margin: 0;
   color: #473c33;
+  font-size: 2.5rem;
 }
 
 .add-vaccine-header p {
+  margin-top: .8rem;
   color: #666;
+  line-height: 1.6;
 }
 
 .add-vaccine-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
-input,
-select {
+.add-vaccine-form input,
+.add-vaccine-form select {
+  width: 100%;
   padding: 1rem;
-  border: none;
-  border-radius: 12px;
-  background-color: #f8f8f8;
-  color:#473c33;
+  border-radius: 14px;
+  border: 1px solid rgba(171,194,112,.25);
+  background: #fdfdfd;
+  color: #473c33;
+  font-size: 1rem;
+  transition: .2s;
+}
+
+.add-vaccine-form input:focus,
+.add-vaccine-form select:focus {
+  outline: none;
+  border-color: #abc270;
+  box-shadow: 0 0 0 4px rgba(171,194,112,.15);
+}
+
+.add-vaccine-form input::placeholder {
+  color: #999;
 }
 
 .btn-primary {
-  background-color: #abc270;
-  color: white;
-
-  border: none;
-  border-radius: 12px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .6rem;
+  width: 100%;
   padding: 1rem;
+  border: none;
+  border-radius: 14px;
+  background: #abc270;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(171,194,112,.35);
+}
+
+.btn-primary ion-icon {
+  font-size: 1.2rem;
 }
 
 .btn-secondary {
-  background-color: #fec868;
-  color: #473c33;
-
-  border: none;
-  border-radius: 12px;
-
+  width: 100%;
   padding: 1rem;
+  border-radius: 14px;
+  border: 2px solid #fec868;
+  background: transparent;
+  color: #f4a300;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn-secondary:hover {
+  background: #fec868;
+  color: #473c33;
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+  .add-vaccine-container {
+    padding: 1rem;
+  }
+
+  .add-vaccine-card {
+    padding: 2rem;
+  }
+
+  .page-icon {
+    font-size: 3rem;
+  }
+
+  .add-vaccine-header h1 {
+    font-size: 2rem;
+  }
+
 }

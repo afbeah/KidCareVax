@@ -1,73 +1,94 @@
-<ion-content>
+<ion-content [fullscreen]="true">
 
   <div class="add-vaccine-container">
 
-    <div class="add-vaccine-header">
+    <div class="add-vaccine-card">
 
-      <h1>Registrar Vacina</h1>
-
-      <p>
-        Atualize o histórico vacinal da criança.
-      </p>
-
-    </div>
-
-    <form class="add-vaccine-form">
-
-      <input
-        type="text"
-        placeholder="Nome da Vacina"
-        [(ngModel)]="name"
-        name="name"
-      />
-
-      <input
-        type="date"
-        [(ngModel)]="applicationDate"
-        name="applicationDate"
-      />
-
-      <select
-        [(ngModel)]="status"
-        name="status">
-
-        <option value="">
-          Status da Vacina
-        </option>
-
-        <option value="Aplicada">
-          Aplicada
-        </option>
-
-        <option value="Pendente">
-          Pendente
-        </option>
-
-        <option value="Atrasada">
-          Atrasada
-        </option>
-
-      </select>
-
-      <button
-        type="button"
-        class="btn-primary"
-        (click)="saveVaccine()">
-
-        Salvar
-
-      </button>
-
-      <button
-        type="button"
-        class="btn-secondary"
+      <div
+        class="add-vaccine-back"
         routerLink="/child-details">
 
-        Cancelar
+        <ion-icon name="arrow-back-outline"></ion-icon>
 
-      </button>
+        <span>Voltar</span>
 
-    </form>
+      </div>
+
+      <div class="add-vaccine-header">
+
+        <ion-icon
+          class="page-icon"
+          name="medical-outline">
+        </ion-icon>
+
+        <h1>Registrar Vacina</h1>
+
+        <p>
+          Atualize o histórico vacinal da criança.
+        </p>
+
+      </div>
+
+      <form class="add-vaccine-form">
+
+        <input
+          type="text"
+          placeholder="Nome da Vacina"
+          [(ngModel)]="name"
+          name="name"
+        />
+
+        <input
+          type="date"
+          [(ngModel)]="applicationDate"
+          name="applicationDate"
+        />
+
+        <select
+          [(ngModel)]="status"
+          name="status">
+
+          <option value="">
+            Status da Vacina
+          </option>
+
+          <option value="Aplicada">
+            Aplicada
+          </option>
+
+          <option value="Pendente">
+            Pendente
+          </option>
+
+          <option value="Atrasada">
+            Atrasada
+          </option>
+
+        </select>
+
+        <button
+          type="button"
+          class="btn-primary"
+          (click)="saveVaccine()">
+
+          <ion-icon name="save-outline"></ion-icon>
+
+          Registrar Vacina
+
+        </button>
+
+        <button
+          type="button"
+          class="btn-secondary"
+          routerLink="/child-details">
+
+          Cancelar
+
+        </button>
+
+      </form>
+
+    </div>
 
   </div>
 
