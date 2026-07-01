@@ -1,59 +1,146 @@
+ion-content {
+  --background: transparent;
+}
+
 .campaigns-container {
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+
+  background-image: url("/assets/images/background-login.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.campaigns-card {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+
+  background: rgba(250,249,243,.95);
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+
+  box-shadow: 0 20px 50px rgba(44, 62, 80, .12);
+  padding: 3rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.campaigns-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: fit-content;
+  cursor: pointer;
+  color: #473c33;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.campaigns-back:hover {
+  color: #abc270;
+}
+
+.campaigns-back ion-icon {
+  font-size: 1.2rem;
 }
 
 .campaigns-header {
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.page-icon {
+  font-size: 4rem;
+  color: #abc270;
+  margin-bottom: 1rem;
 }
 
 .campaigns-header h1 {
   color: #473c33;
+  font-size: 2.5rem;
+  margin-bottom: .8rem;
 }
 
 .campaigns-header p {
   color: #666;
+  line-height: 1.6;
 }
 
 .campaign-card {
-  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   padding: 1.5rem;
+  border-radius: 22px;
+  background: #e6efcb;
+  border: 1px solid rgba(171, 194, 112, .45);
 
-  border-radius: 12px;
-
-  margin-bottom: 1rem;
-
-  border-left: 4px solid #abc270;
+  transition: .25s;
+  cursor: default;
 }
 
-.campaign-card h2 {
+.campaign-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.campaign-info {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.campaign-info h2 {
+  margin: 0;
   color: #473c33;
+  font-size: 1.5rem;
 }
 
-.campaign-card span {
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.btn-secondary {
-  width: 100%;
-  max-width: 300px;
-
-  display: block;
-  margin: 2rem auto;
-
-  background-color: #fec868;
-  color: #473c33;
-
-  border: none;
-  border-radius: 12px;
-
-  padding: 1rem;
-}
-
-p {
+.campaign-info p {
+  margin: 0;
   color: #666;
+}
+
+.status-active {
+  width: fit-content;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  background: #eaf8ea;
+  color: #2e7d32;
+
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+/*  Mobile  */
+
+@media (max-width: 768px) {
+
+  .campaigns-container {
+    padding: 1rem;
+  }
+
+  .campaign-card {
+    padding: 2rem;
+  }
+
+  .campaigns-header h1 {
+    font-size: 2rem;
+  }
+
+  .campaign-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .campaign-arrow {
+    align-self: flex-end;
+  }
+
 }

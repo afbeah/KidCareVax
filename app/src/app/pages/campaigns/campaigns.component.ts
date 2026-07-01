@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, arrowForwardOutline, megaphoneOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-campaigns',
@@ -10,11 +13,20 @@ import { IonContent } from '@ionic/angular/standalone';
     CommonModule,
     RouterModule,
     IonContent,
+    IonIcon,
   ],
   templateUrl: './campaigns.component.html',
   styleUrls: ['./campaigns.component.scss'],
 })
 export class CampaignsComponent {
+
+  constructor() {
+    addIcons({
+      arrowBackOutline,
+      arrowForwardOutline,
+      megaphoneOutline,
+    });
+  }
 
   campaigns = [
     {

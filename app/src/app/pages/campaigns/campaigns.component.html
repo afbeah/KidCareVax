@@ -1,44 +1,43 @@
-<ion-content>
+<ion-content [fullscreen]="true">
 
   <div class="campaigns-container">
 
-    <div class="campaigns-header">
+    <div class="campaigns-card">
 
-      <h1>
-        Campanhas de Vacinação
-      </h1>
+      <div class="campaigns-back" routerLink="/dashboard">
 
-      <p>
-        Acompanhe campanhas ativas para o público infantil.
-      </p>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+
+        <span>Voltar</span>
+
+      </div>
+
+      <div class="campaigns-header">
+
+        <ion-icon class="page-icon" name="megaphone-outline"></ion-icon>
+
+        <h1>Campanhas</h1>
+
+        <p>Acompanhe campanhas de vacinação disponíveis para o público infantil.</p>
+
+      </div>
+
+      <div class="campaign-card" *ngFor="let campaign of campaigns">
+
+        <div class="campaign-info">
+
+          <h2>{{ campaign.title }}</h2>
+
+          <p>{{ campaign.description }}</p>
+
+          <span class="status-active">{{ campaign.status }}</span>
+
+        </div>
+
+
+      </div>
 
     </div>
-
-    <div
-      class="campaign-card"
-      *ngFor="let campaign of campaigns">
-
-      <h2>
-        {{ campaign.title }}
-      </h2>
-
-      <p>
-        {{ campaign.description }}
-      </p>
-
-      <span class="status-active">
-        {{ campaign.status }}
-      </span>
-
-    </div>
-
-    <button
-      class="btn-secondary"
-      routerLink="/dashboard">
-
-      Voltar
-
-    </button>
 
   </div>
 

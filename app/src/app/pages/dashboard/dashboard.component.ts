@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline, arrowBackOutline, addCircleOutline } from 'ionicons/icons';
+import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline, arrowBackOutline, addCircleOutline, logOutOutline } from 'ionicons/icons';
 
 import { ChildService } from '../../core/services/child.service';
 import { VaccineService } from '../../core/services/vaccine.service';
@@ -30,6 +32,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private childService: ChildService,
     private vaccineService: VaccineService,
+    private authService: AuthService,
+    private router: Router,
   ) {
     
     addIcons({
@@ -39,7 +43,8 @@ export class DashboardComponent implements OnInit {
       megaphoneOutline,
       arrowForwardOutline,
       arrowBackOutline,
-      addCircleOutline
+      addCircleOutline,
+      logOutOutline,
     });
   }
 
@@ -73,6 +78,18 @@ export class DashboardComponent implements OnInit {
 
     }
 
+  }
+
+  async logout() {
+    try {
+      await this.authService.logout();
+
+      this.router.navigate(['/login'])
+    } catch (error) {
+      console.error(error);
+
+      alert('Erro ao sair da aplicação.');
+    }
   }
 
 }

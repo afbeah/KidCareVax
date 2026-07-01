@@ -1,15 +1,17 @@
 <ion-content [fullscreen]="true">
-
   <div class="dashboard-container">
-    
     <div class="dashboard-card">
+      <div class="dashboard-top">
+        <div class="dashboard-back" routerLink="/landing">
+          <ion-icon name="arrow-back-outline"></ion-icon>
 
-      <div class="dashboard-back" routerLink="/landing">
+          <span>Voltar</span>
+        </div>
 
-        <ion-icon name="arrow-back-outline"></ion-icon>
-
-        <span>Voltar</span>
-
+        <div class="dashboard-logout" (click)="logout()">
+          <ion-icon name="log-out-outline"></ion-icon>
+          <span>Sair</span>
+        </div>
       </div>
 
       <div class="dashboard-header">
@@ -67,22 +69,21 @@
       <!-- Navegação -->
 
       <div class="dashboard-actions">
-
         <div class="action-card" routerLink="/add-child">
-
           <div class="action-info">
             <h2>
               <ion-icon name="add-circle-outline"></ion-icon>
               Cadastrar Criança
             </h2>
 
-            <p>Cadastre uma nova criança para acompanhar sua situação vacinal.</p>
+            <p>
+              Cadastre uma nova criança para acompanhar sua situação vacinal.
+            </p>
           </div>
 
           <div class="action-arrow">
             <ion-icon class="arrow-forward-outline"></ion-icon>
           </div>
-
         </div>
 
         <div class="action-card" routerLink="/children">
