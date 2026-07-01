@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 
 import { db } from '../firebase/firebase.config';
 import { auth } from '../firebase/firebase.config';
@@ -43,9 +43,19 @@ export class ChildService {
     }));
   }
 
-  async getFirstChild() {
-    const children = await this.getChildren();
+  async getChildById(id: string) {
+    const snapshot = await getDoc(
+      doc(db, 'children', id)
+    );
 
-    return children[0];
+    if(!snapshot.exists()){
+      return null;
+    }
+
+    return {
+      id: snapshot.id,
+      ...snapshot.data(),
+    };
   }
+
 }

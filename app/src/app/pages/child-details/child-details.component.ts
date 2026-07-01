@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -32,6 +32,7 @@ export class ChildDetailsComponent implements OnInit {
   constructor(
     private childService: ChildService,
     private vaccineService: VaccineService,
+    private route: ActivatedRoute,
   ) {
     addIcons({
       arrowBackOutline,
@@ -46,7 +47,13 @@ export class ChildDetailsComponent implements OnInit {
 
     try {
 
-      this.child = await this.childService.getFirstChild();
+      const childId = this.route.snapshot.paramMap.get('id');
+
+      if (!childId) {
+        return;
+      }
+
+      this.child = await this.childService.getChildById(childId);
 
       if (!this.child) {
         return;

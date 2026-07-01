@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -31,6 +31,7 @@ export class AddVaccineComponent {
     private vaccineService: VaccineService,
     private childService: ChildService,
     private router: Router,
+    private route: ActivatedRoute,
   ) {
     addIcons({
       arrowBackOutline,
@@ -43,15 +44,15 @@ export class AddVaccineComponent {
 
     try {
 
-      const child = await this.childService.getFirstChild();
+      const childId = this.route.snapshot.paramMap.get('id');
 
-      if (!child) {
-        alert('Nenhuma criança cadastrada.');
+      if (!childId) {
+        alert('Criança não encontrada');
         return;
       }
 
       await this.vaccineService.createVaccine(
-        child.id,
+        childId,
         this.name,
         this.applicationDate,
         this.status,
@@ -59,7 +60,7 @@ export class AddVaccineComponent {
 
       alert('Vacina registrada com sucesso!');
 
-      this.router.navigate(['/child-details']);
+      this.router.navigate(['/child-details', childId]);
 
     } catch (error) {
 

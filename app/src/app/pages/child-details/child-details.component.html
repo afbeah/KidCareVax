@@ -61,7 +61,7 @@
         </div>
       </section>
 
-      <button class="btn-primary" routerLink="/add-vaccine">
+      <button class="btn-primary" [routerLink]="['/add-vaccine', child?.id]">
         <ion-icon name="add-circle-outline"></ion-icon>
         Registrar Vacina
       </button>

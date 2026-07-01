@@ -40,7 +40,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'child-details',
+    path: 'child-details/:id',
     loadComponent: () =>
       import('./pages/child-details/child-details.component').then(
         (m) => m.ChildDetailsComponent,
@@ -61,7 +61,7 @@ export const routes: Routes = [
       ),
   },
     {
-    path: 'add-vaccine',
+    path: 'add-vaccine/:id',
     loadComponent: () =>
       import('./pages/add-vaccine/add-vaccine.component').then(
         (m) => m.AddVaccineComponent,

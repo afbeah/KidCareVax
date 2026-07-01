@@ -30,7 +30,7 @@
 
       </button>
 
-      <div class="child-card" *ngFor="let child of children" routerLink="/child-details">
+      <div class="child-card" *ngFor="let child of children" [routerLink]="['/child-details', child.id]">
 
         <div class="child-info">
 
