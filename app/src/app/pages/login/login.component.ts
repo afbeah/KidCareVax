@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline } from 'ionicons/icons';
 
 import { AuthService } from '../../core/services/auth.service';
 
@@ -12,6 +15,7 @@ import { AuthService } from '../../core/services/auth.service';
     RouterModule,
     IonContent,
     FormsModule,
+    IonIcon,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
@@ -24,7 +28,11 @@ export class LoginComponent {
   constructor(
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {
+    addIcons({
+      arrowBackOutline,
+    });
+  }
 
   async login() {
 

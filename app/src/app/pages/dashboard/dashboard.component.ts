@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
+import { Router, RouterModule } from '@angular/router';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
-import { peopleOutline, medicalOutline, timeOutline, megaphoneOutline, arrowForwardOutline, arrowBackOutline, addCircleOutline, logOutOutline } from 'ionicons/icons';
+import {
+  peopleOutline,
+  medicalOutline,
+  timeOutline,
+  megaphoneOutline,
+  arrowForwardOutline,
+  arrowBackOutline,
+  addCircleOutline,
+  logOutOutline,
+} from 'ionicons/icons';
 
+import { AuthService } from '../../core/services/auth.service';
 import { ChildService } from '../../core/services/child.service';
 import { VaccineService } from '../../core/services/vaccine.service';
 
@@ -35,7 +43,7 @@ export class DashboardComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
   ) {
-    
+
     addIcons({
       peopleOutline,
       medicalOutline,
@@ -46,31 +54,23 @@ export class DashboardComponent implements OnInit {
       addCircleOutline,
       logOutOutline,
     });
+
   }
 
   async ngOnInit() {
 
     try {
 
-      const children =
-        await this.childService.getChildren();
-        console.log('Dashboard:', children);
-        console.log('Quantidade:', children.length);
+      const user = await this.authService.waitForAuth();
 
-      const vaccines =
-        await this.vaccineService.getAllVaccines();
+      if (!user) {
 
-      this.totalChildren = children.length;
+        this.router.navigate(['/login']);
+        return;
 
-      this.pendingVaccines =
-        vaccines.filter(
-          (v: any) => v.status === 'Pendente'
-        ).length;
+      }
 
-      this.overdueVaccines =
-        vaccines.filter(
-          (v: any) => v.status === 'Atrasada'
-        ).length;
+      await this.loadDashboard();
 
     } catch (error) {
 
@@ -80,16 +80,44 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  private async loadDashboard() {
+
+    const children =
+      await this.childService.getChildren();
+
+    this.totalChildren = children.length;
+
+    const vaccines =
+      await this.vaccineService.getAllVaccines();
+
+    this.pendingVaccines =
+      vaccines.filter(
+        (v: any) => v.status === 'Pendente'
+      ).length;
+
+    this.overdueVaccines =
+      vaccines.filter(
+        (v: any) => v.status === 'Atrasada'
+      ).length;
+
+  }
+
   async logout() {
+
     try {
+
       await this.authService.logout();
 
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
+
     } catch (error) {
+
       console.error(error);
 
       alert('Erro ao sair da aplicação.');
+
     }
+
   }
 
 }

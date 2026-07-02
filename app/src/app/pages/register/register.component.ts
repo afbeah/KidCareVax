@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
+
+import { addIcons } from 'ionicons';
+import { arrowBackOutline } from 'ionicons/icons';
 
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterModule, IonContent, FormsModule],
+  imports: [RouterModule, IonContent, FormsModule, IonIcon],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
@@ -23,7 +26,11 @@ export class RegisterComponent {
   constructor(
     private authService: AuthService,
     private router: Router,
-  ) {}
+  ) {
+    addIcons({
+      arrowBackOutline,
+    });
+  }
 
   async register() {
     if (this.password !== this.confirmPassword) {

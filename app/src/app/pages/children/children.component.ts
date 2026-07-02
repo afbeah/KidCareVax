@@ -42,10 +42,6 @@ export class ChildrenComponent implements OnInit {
     try {
 
       this.children = await this.childService.getChildren();
-      console.log('Children:', this.children);
-      console.log('Quantidade:', this.children.length)
-
-      console.log(this.children);
 
     } catch (error) {
 

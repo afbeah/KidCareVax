@@ -4,6 +4,14 @@
 
     <div class="register-card">
 
+      <div class="register-back" routerLink="/landing">
+
+        <ion-icon name="arrow-back-outline"></ion-icon>
+
+        <span>Voltar</span>
+
+      </div>
+
       <div class="register-header">
 
         <img src="assets/images/logo.svg" alt="KidCareVax" class="logo"/>
@@ -16,15 +24,25 @@
 
       <div class="register-form">
 
-        <input type="text" placeholder="Nome Completo" [(ngModel)]="name"/>
+        <input type="text" placeholder="Nome Completo"
+        name="nomeCompleto" 
+        [(ngModel)]="name"/>
 
-        <input type="text" placeholder="CPF" [(ngModel)]="cpf"/>
+        <input type="text" placeholder="CPF" 
+        name="cpf"
+        [(ngModel)]="cpf"/>
 
-        <input type="email" placeholder="E-mail" [(ngModel)]="email"/>
+        <input type="email" placeholder="E-mail" 
+        name="email"
+        [(ngModel)]="email"/>
 
-        <input type="password" placeholder="Senha" [(ngModel)]="password"/>
+        <input type="password" placeholder="Senha" 
+        name="password"
+        [(ngModel)]="password"/>
 
-        <input type="password" placeholder="Confirmar Senha" [(ngModel)]="password">
+        <input type="password" placeholder="Confirmar Senha"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword">
 
         <button class="btn-primary" (click)="register()">Criar Conta</button>
 

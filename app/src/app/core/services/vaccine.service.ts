@@ -38,9 +38,13 @@ export class VaccineService {
   async getAllVaccines() {
     const snapshot = await getDocs(collection(db, 'vaccines'));
 
-    return snapshot.docs.map((doc) => ({
+    const vaccines = snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
     }));
+
+    console.table(vaccines);
+
+    return vaccines;
   }
 }

@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
-import { addDoc, collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore';
 
 import { db } from '../firebase/firebase.config';
 import { auth } from '../firebase/firebase.config';
@@ -26,6 +34,8 @@ export class ChildService {
   async getChildren() {
     const user = auth.currentUser;
 
+    console.log('Usuário autenticado:', user);
+
     if (!user) {
       return [];
     }
@@ -37,6 +47,8 @@ export class ChildService {
 
     const snapshot = await getDocs(q);
 
+    console.log('Quantidade de crianças:', snapshot.size);
+
     return snapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
@@ -44,11 +56,9 @@ export class ChildService {
   }
 
   async getChildById(id: string) {
-    const snapshot = await getDoc(
-      doc(db, 'children', id)
-    );
+    const snapshot = await getDoc(doc(db, 'children', id));
 
-    if(!snapshot.exists()){
+    if (!snapshot.exists()) {
       return null;
     }
 
@@ -57,5 +67,4 @@ export class ChildService {
       ...snapshot.data(),
     };
   }
-
 }
